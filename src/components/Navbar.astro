@@ -9,7 +9,7 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         <span class="nav-logo">
             <Figure name="logo" />
         </span>
-        <button class="hambuger-button">
+        <button class="hamburger-button">
             <Figure name="icon-hamburger" />
         </button>
         <nav class="navbar-desktop">
@@ -22,7 +22,7 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
             }
         </nav>
     </section>
-    <nav class="navbar-mobile">
+    <nav class="navbar-mobile hide-navbar-mobile">
         {
             menuItems.map((item) => (
                 <a class="navbar-button" href="#">
@@ -32,6 +32,16 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         }
     </nav>
 </header>
+
+<script>
+    const hamburguer = document.getElementsByClassName("hamburger-button")[0];
+    const navbarMobile = document.getElementsByClassName("navbar-mobile")[0];
+
+    hamburguer.addEventListener("click", (e) => {
+        navbarMobile.classList.toggle("hide-navbar-mobile");
+        navbarMobile.classList.toggle("show-navbar-mobile");
+    });
+</script>
 
 <style>
     header {
@@ -49,7 +59,7 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         fill: white;
     }
 
-    .hambuger-button {
+    .hamburger-button {
         cursor: pointer;
         background-color: transparent;
         border: none;
@@ -59,8 +69,15 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
     .navbar-desktop {
         display: none;
     }
-    .navbar-mobile {
+
+    .show-navbar-mobile {
         display: flex;
+    }
+    .hide-navbar-mobile {
+        display: none;
+    }
+
+    .navbar-mobile {
         flex-direction: column;
         justify-content: space-between;
         align-items: stretch;
@@ -138,7 +155,7 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         }
 
         /* Hamburguer button and menu hidden */
-        .hambuger-button {
+        .hamburger-button {
             display: none;
         }
     }

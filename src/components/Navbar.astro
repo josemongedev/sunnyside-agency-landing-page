@@ -47,7 +47,6 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
 
     .nav-logo {
         fill: white;
-        transform: scale(1.37);
     }
 
     .hambuger-button {
@@ -85,6 +84,11 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         place-items: center;
         text-decoration: none;
     }
+
+    .navbar-button > * {
+        fill: white;
+    }
+    .navbar-button:hover,
     .navbar-button:active {
         fill: #979797;
         /* color: #979797; */
@@ -117,6 +121,10 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         }
         .navbar-mobile {
             display: none;
+        }
+
+        .nav-logo {
+            transform: scale(1.37);
         }
 
         a {

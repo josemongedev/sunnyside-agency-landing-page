@@ -10,46 +10,77 @@ const yellow = "hsl(51, 100%, 49%);";
 ---
 
 <section>
-    <ServiceCard
-        title="Transform your brand"
-        content={`We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.`}
-        underlineColor={yellow}
-    />
+    <div class="card-1">
+        <ImageBox shortName="transform" />
+    </div>
 
-    <ImageBox shortName="transform" />
+    <div class="card-2">
+        <ServiceCard
+            title="Transform your brand"
+            content={`We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.`}
+            underlineColor={yellow}
+        />
+    </div>
 
-    <ImageBox shortName="stand-out" />
+    <div class="card-3">
+        <ImageBox shortName="stand-out" />
+    </div>
 
-    <ServiceCard
-        title="Stand out to the right audience"
-        content={`Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we\'ll build and extend your brand in digital places.`}
-        underlineColor={softRed}
-    />
+    <div class="card-4">
+        <ServiceCard
+            title="Stand out to the right audience"
+            content={`Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we\'ll build and extend your brand in digital places.`}
+            underlineColor={softRed}
+        />
+    </div>
 
-    <ImageCard
-        title="Graphic design"
-        content={`Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.`}
-        background="graphic-design"
-        textColor={darkDesaturatedCyan}
-    />
+    <div class="card-5">
+        <ImageCard
+            title="Graphic design"
+            content={`Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.`}
+            background="graphic-design"
+            textColor={darkDesaturatedCyan}
+        />
+    </div>
 
-    <ImageCard
-        title="Photography"
-        content={`Increase your credibility by getting the most stunning, high-quality photos that improve your business image.`}
-        background="photography"
-        textColor={darkBlue}
-    />
+    <div class="card-6">
+        <ImageCard
+            title="Photography"
+            content={`Increase your credibility by getting the most stunning, high-quality photos that improve your business image.`}
+            background="photography"
+            textColor={darkBlue}
+        />
+    </div>
 </section>
 
 <style>
     section {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     @media (min-width: 1440px) {
+        .card-1 {
+            order: 2;
+        }
+        .card-2 {
+            order: 1;
+        }
+        .card-3 {
+            order: 3;
+        }
+        .card-4 {
+            order: 4;
+        }
+        .card-5 {
+            order: 5;
+        }
+        .card-6 {
+            order: 6;
+        }
         section {
-            grid-template-columns: repeat(2, 1fr);
+            flex-direction: row;
+            flex-wrap: wrap;
         }
     }
 </style>

@@ -34,10 +34,10 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
 </header>
 
 <script>
-    const hamburguer = document.getElementsByClassName("hamburger-button")[0];
+    const hamburger = document.getElementsByClassName("hamburger-button")[0];
     const navbarMobile = document.getElementsByClassName("navbar-mobile")[0];
 
-    hamburguer.addEventListener("click", (e) => {
+    hamburger.addEventListener("click", (e) => {
         navbarMobile.classList.toggle("hide-navbar-mobile");
         navbarMobile.classList.toggle("show-navbar-mobile");
     });
@@ -64,6 +64,12 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         background-color: transparent;
         border: none;
         padding: 0;
+        fill: white;
+    }
+
+    .hamburger-button:hover,
+    .hamburger-button:active {
+        fill: #979797;
     }
 
     .navbar-desktop {
@@ -100,15 +106,6 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
         display: grid;
         place-items: center;
         text-decoration: none;
-    }
-
-    .navbar-button > * {
-        fill: white;
-    }
-    .navbar-button:hover,
-    .navbar-button:active {
-        fill: #979797;
-        /* color: #979797; */
     }
 
     a {
@@ -154,7 +151,7 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
             color: var(--desaturated-blue);
         }
 
-        /* Hamburguer button and menu hidden */
+        /* hamburger button and menu hidden */
         .hamburger-button {
             display: none;
         }

@@ -1,0 +1,108 @@
+---
+interface Props {
+    title: string;
+    content: string;
+    underlineColor: string;
+}
+
+const { title, content, underlineColor } = Astro.props as Props;
+---
+
+<article>
+    <section>
+        <h2>{title}</h2>
+        <p>{content}</p>
+        <span>
+            <a class="card-button" href="#">
+                <span>Learn more</span>
+                <hr />
+            </a>
+        </span>
+    </section>
+</article>
+
+<style define:vars={{ underlineColor }}>
+    article {
+        min-width: 375px;
+        min-height: 600px;
+        position: relative;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    section {
+        text-align: center;
+        width: 327px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+
+    h2 {
+        font-size: var(--fs-800);
+        font-weight: 900;
+        line-height: 49.32px;
+        letter-spacing: -0.29px;
+    }
+
+    .card-button {
+        margin-top: 8px;
+        font-size: var(--fs-090);
+        font-weight: 700;
+        font-family: var(--ff-button);
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: var(--fs-100);
+        line-height: var(--lh-320);
+        letter-spacing: -0.11px;
+    }
+
+    a:link,
+    a:active,
+    a:visited,
+    a {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 137px;
+        color: var(--clr-text);
+        appearance: none;
+        text-decoration: none;
+    }
+
+    a > span {
+        position: absolute;
+        top: -10px;
+    }
+
+    hr {
+        margin: 0;
+        padding: 0;
+        width: 137px;
+        border: none;
+        border-radius: 28px;
+        background-color: var(--underlineColor);
+        height: 11px;
+        opacity: 25%;
+    }
+    a:hover > hr {
+        opacity: 1;
+    }
+
+    @media (min-width: 1440px) {
+        article {
+            min-width: 720px;
+        }
+
+        section {
+            align-items: start;
+            text-align: left;
+            width: 445px;
+        }
+    }
+</style>

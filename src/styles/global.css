@@ -24,47 +24,58 @@
   --yellow: hsl(51, 100%, 49%);
   --dark-desaturated-cyan: hsl(167, 40%, 24%);
   --dark-moderate-cyan: hsl(168, 34%, 41%);
-  --desaturated-blue: hsl(212, 27%, 19%);
-  --very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --very-dark-grayish-blue: hsl(210, 9%, 39%);
   --very-dark-desaturated-blue: hsl(212, 27%, 19%);
   --dark-blue: hsl(198, 62%, 26%);
   --dark-grayish-blue: hsl(232, 10%, 55%);
-  --grayish-blue: hsl(210, 4%, 67%);
+  --grayish-blue: hsl(206, 4%, 67%);
+  --light-cyan: #90d4c6;
+  --light-moderate-cyan: #458d7e;
+  --dark-cyan: #2c7566;
+  /* Text  */
+  --clr-text: var(--very-dark-desaturated-blue);
 
   /* Fonts */
-  --ff-barlow: "Barlow", Arial, Helvetica, sans-serif;
   --ff-fraunces: "Fraunces", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ff-barlow: "Barlow", Arial, Helvetica, sans-serif;
   --ff-headings: var(--ff-fraunces);
   --ff-button: var(--ff-fraunces);
   --ff-base: var(--ff-barlow);
 
   /* Font sizes */
+  --fs-000: 14px;
   --fs-090: 15px;
   --fs-100: 16px;
   --fs-200: 18px;
+  --fs-300: 20px;
 
+  --fs-800: 40px;
   --fs-900: 56px;
 
   /* Line heights */
   --lh-300: 25px;
+  --lh-320: 27px;
 
   /* Layers */
   --bg-layer: -1;
   --content-layer: auto;
-  --navbar-layer: 1;
-  --dialog-layer: 2;
+  --hero-layer: 1;
+  --navbar-layer: 2;
+  --dialog-layer: 3;
 }
 
 html,
 body {
   font-family: "Barlow";
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--fs-200);
+  color: var(--clr-text);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--ff-headings);
 }
 

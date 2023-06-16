@@ -6,70 +6,132 @@ const menuItems = ["About", "Services", "Projects", "Contact"];
 
 <header class="flex-row justify-center">
     <section class="flex-row justify-space-between items-center">
-        <Figure name="logo" />
-        <button>
+        <span class="nav-logo">
+            <Figure name="logo" />
+        </span>
+        <button class="hambuger-button">
             <Figure name="icon-hamburger" />
         </button>
-        <nav class="flex-row justify-space-between items-center">
-            {menuItems.map((item) => <a href="#">{item}</a>)}
+        <nav class="navbar-desktop">
+            {
+                menuItems.map((item) => (
+                    <a class="navbar-button" href="#">
+                        {item}
+                    </a>
+                ))
+            }
         </nav>
     </section>
+    <nav class="navbar-mobile">
+        {
+            menuItems.map((item) => (
+                <a class="navbar-button" href="#">
+                    {item}
+                </a>
+            ))
+        }
+    </nav>
 </header>
 
 <style>
     header {
         width: 100%;
         position: absolute;
-        z-index: 1;
+        z-index: var(--navbar-layer);
+        padding: 32px 24px 0 24px;
     }
 
     section {
         width: 100%;
     }
 
-    button {
-        background-color: transparent;
-        border: none;
+    .nav-logo {
+        fill: white;
+        transform: scale(1.37);
     }
 
-    nav {
+    .hambuger-button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .navbar-desktop {
         display: none;
+    }
+    .navbar-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 17px;
+        position: absolute;
+        z-index: var(--dialog-layer);
+        padding: 78px 94px 39px 95px;
+        margin-top: 50px;
+        height: 329px;
+        width: 329px;
+        background-color: white;
+        clip-path: polygon(90% 10%, 100% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
+    }
+
+    .navbar-button {
+        font-size: var(--fs-200);
+        width: 140px;
+        height: 56px;
+        border-radius: 28px;
+        display: grid;
+        place-items: center;
+        text-decoration: none;
+    }
+    .navbar-button:active {
+        fill: #979797;
+        /* color: #979797; */
+    }
+
+    a {
+        color: var(--dark-grayish-blue);
+    }
+
+    a:hover {
+        font-size: var(--fs-090);
+        font-weight: 700;
+        font-family: var(--ff-button);
+        text-transform: uppercase;
+        color: black;
+        background-color: var(--yellow);
     }
 
     @media (min-width: 1440px) {
-        button {
-            display: none;
-        }
-
         header {
             padding: 34px 48px 0 40px;
         }
 
-        nav {
-            height: 100%;
+        .navbar-desktop {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            height: 100%;
             gap: 10px;
+        }
+        .navbar-mobile {
+            display: none;
         }
 
         a {
-            font-size: var(--fs-200);
-            width: 140px;
-            height: 56px;
-            display: grid;
-            place-items: center;
             color: white;
-            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2537);
         }
 
         a:hover {
-            font-size: var(--fs-090);
-            font-family: var(--ff-button);
-            text-transform: uppercase;
             background-color: white;
             color: var(--desaturated-blue);
-            border-radius: 28px;
+        }
+
+        /* Hamburguer button and menu hidden */
+        .hambuger-button {
+            display: none;
         }
     }
 </style>

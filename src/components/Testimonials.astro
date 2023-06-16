@@ -2,34 +2,120 @@
 ---
 
 <section>
-    <h3>Client testimonials</h3>
-    <article>
-        <picture></picture>
-        <p>
-            We put our trust in Sunnyside and they delivered, making sure our
-            needs were met and deadlines were always hit.
-        </p>
-        <h4>Emily R.</h4>
-        <span> Marketing Director</span>
-    </article>
+    <section class="testimonials">
+        <h3>Client testimonials</h3>
+        <div>
+            <article class="flex-column justify-center items-center">
+                <picture>
+                    <img
+                        src="/sunnyside-agency-landing-page/images/image-emily.jpg"
+                        alt="Emily R. - Marketing Director"
+                    />
+                </picture>
+                <p>
+                    We put our trust in Sunnyside and they delivered, making
+                    sure our needs were met and deadlines were always hit.
+                </p>
+                <footer>
+                    <h4>Emily R.</h4>
+                    <span>Marketing Director</span>
+                </footer>
+            </article>
 
-    <article>
-        <picture></picture>
-        <p>
-            Sunnyside’s enthusiasm coupled with their keen interest in our
-            brand’s success made it a satisfying and enjoyable experience.
-        </p>
-        <h4>Thomas S.</h4>
-        <span> Chief Operating Officer</span>
-    </article>
+            <article class="flex-column justify-center items-center">
+                <picture>
+                    <img
+                        src="/sunnyside-agency-landing-page/images/image-thomas.jpg"
+                        alt="Thomas S. - Chief Operating Officer"
+                    />
+                </picture>
+                <p>
+                    Sunnyside’s enthusiasm coupled with their keen interest in
+                    our brand’s success made it a satisfying and enjoyable
+                    experience.
+                </p>
+                <footer>
+                    <h4>Thomas S.</h4>
+                    <span>Chief Operating Officer</span>
+                </footer>
+            </article>
 
-    <article>
-        <picture></picture>
-        <p>
-            Incredible end result! Our sales increased over 400% when we worked
-            with Sunnyside. Highly recommended!
-        </p>
-        <h4>Jennie F.</h4>
-        Business Owner
-    </article>
+            <article class="flex-column justify-center items-center">
+                <picture>
+                    <img
+                        src="/sunnyside-agency-landing-page/images/image-jennie.jpg"
+                        alt="Jennie F. - Business Owner"
+                    />
+                </picture>
+                <p>
+                    Incredible end result! Our sales increased over 400% when we
+                    worked with Sunnyside. Highly recommended!
+                </p>
+                <footer>
+                    <h4>Jennie F.</h4>
+                    <span>Business Owner</span>
+                </footer>
+            </article>
+        </div>
+    </section>
 </section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .testimonials {
+        margin-block: 160px;
+        max-width: 1110px;
+    }
+
+    div {
+        margin-top: 81px;
+        gap: 30px;
+    }
+    section > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: var(--fs-300);
+        color: var(--grayish-blue);
+    }
+
+    article {
+        gap: 58px;
+    }
+
+    picture,
+    img {
+        width: 72px;
+        height: 72px;
+        border-radius: 100%;
+    }
+
+    h4 {
+        font-weight: 900;
+    }
+
+    span {
+        color: var(--grayish-blue);
+        font-size: var(--fs-000);
+    }
+
+    p {
+        text-align: center;
+        max-width: 350px;
+        color: var(--very-dark-grayish-blue);
+    }
+
+    footer {
+        text-align: center;
+    }
+</style>

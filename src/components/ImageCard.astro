@@ -1,0 +1,63 @@
+---
+interface Props {
+    title: string;
+    content: string;
+    background: string;
+    textColor: string;
+}
+
+const { title, content, background, textColor } = Astro.props as Props;
+
+const bgMobile = `url(/sunnyside-agency-landing-page/images/mobile/image-${background}.jpg)`;
+const bgDesktop = `url(/sunnyside-agency-landing-page/images/desktop/image-${background}.jpg)`;
+---
+
+<article>
+    <section>
+        <h2>{title}</h2>
+        <p>{content}</p>
+    </section>
+</article>
+
+<style define:vars={{ bgMobile, bgDesktop, textColor }}>
+    article {
+        background-image: var(--bgMobile);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        min-height: 600px;
+        position: relative;
+        width: 100%;
+        display: grid;
+        place-items: end center;
+    }
+
+    section {
+        width: 327px;
+        color: var(--textColor);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 59px;
+    }
+
+    p {
+        text-align: center;
+        max-width: 339px;
+        font-size: var(--fs-100);
+        line-height: var(--lh-320);
+        letter-spacing: 0.11px;
+    }
+
+    @media (min-width: 1440px) {
+        article {
+            min-width: 720px;
+            background-image: var(--bgDesktop);
+        }
+        section {
+            width: 445px;
+        }
+    }
+</style>

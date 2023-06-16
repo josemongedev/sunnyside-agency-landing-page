@@ -1,11 +1,26 @@
 ---
+import ImageBox from "./ImageBox.astro";
 ---
 
 <section>
-    <div>
-        <picture></picture>
-        <picture></picture>
-        <picture></picture>
-        <picture></picture>
-    </div>
+    <ImageBox shortName="gallery-milkbottles" />
+    <ImageBox shortName="gallery-orange" />
+    <ImageBox shortName="gallery-cone" />
+    <ImageBox shortName="gallery-sugarcubes" />
 </section>
+
+<style>
+    section {
+        max-height: 447px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1440px) {
+        section {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+        }
+    }
+</style>

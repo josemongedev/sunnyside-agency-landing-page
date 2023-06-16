@@ -30,20 +30,30 @@ import Figure from "./Figure.astro";
     }
 
     article {
-        top: 195px;
-        gap: 96.54px;
+        top: 144px;
+        gap: 52px;
         position: absolute;
-        z-index: var(--dialog-layer);
+        z-index: var(--hero-layer);
     }
     h1 {
-        font-size: var(--fs-900);
+        font-size: var(--fs-800);
+        line-height: 49.32px;
+        letter-spacing: 6.25 px;
+        text-align: center;
         font-weight: 900;
         text-transform: uppercase;
-        letter-spacing: 8.75px;
-        line-height: 69.05px;
     }
 
     @media (min-width: 1440px) {
+        article {
+            top: 195px;
+            gap: 96.54px;
+        }
+        h1 {
+            font-size: var(--fs-900);
+            line-height: 69.05px;
+            letter-spacing: 8.75px;
+        }
         section {
             min-height: 800px;
         }

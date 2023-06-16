@@ -1,45 +1,55 @@
 ---
+import ImageBox from "./ImageBox.astro";
+import ImageCard from "./ImageCard.astro";
+import ServiceCard from "./ServiceCard.astro";
+
+const darkBlue = "hsl(198, 62%, 26%)";
+const darkDesaturatedCyan = "hsl(167, 40%, 24%)";
+const softRed = "hsl(7, 99%, 70%)";
+const yellow = "hsl(51, 100%, 49%);";
 ---
 
 <section>
-    <article>
-        <h2>Transform your brand</h2>
-        <p>
-            We are a full-service creative agency specializing in helping brands
-            grow fast. Engage your clients through compelling visuals that do
-            most of the marketing for you.
-        </p>
-        <a href="#"> Learn more</a>
-    </article>
+    <ServiceCard
+        title="Transform your brand"
+        content={`We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.`}
+        underlineColor={yellow}
+    />
 
-    <picture></picture>
+    <ImageBox shortName="transform" />
 
-    <article>
-        <h2>Stand out to the right audience</h2>
-        <p>
-            Using a collaborative formula of designers, researchers,
-            photographers, videographers, and copywriters, we’ll build and
-            extend your brand in digital places.
-        </p>
-        <a href="#"> Learn more</a>
-    </article>
+    <ImageBox shortName="stand-out" />
 
-    <picture></picture>
+    <ServiceCard
+        title="Stand out to the right audience"
+        content={`Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we\'ll build and extend your brand in digital places.`}
+        underlineColor={softRed}
+    />
 
-    <article>
-        <h3>Graphic design</h3>
-        <p>
-            Great design makes you memorable. We deliver artwork that
-            underscores your brand message and captures potential clients’
-            attention.
-        </p>
-    </article>
+    <ImageCard
+        title="Graphic design"
+        content={`Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.`}
+        background="graphic-design"
+        textColor={darkDesaturatedCyan}
+    />
 
-    <article>
-        <h3>Photography</h3>
-        <p>
-            Increase your credibility by getting the most stunning, high-quality
-            photos that improve your business image.
-        </p>
-    </article>
+    <ImageCard
+        title="Photography"
+        content={`Increase your credibility by getting the most stunning, high-quality photos that improve your business image.`}
+        background="photography"
+        textColor={darkBlue}
+    />
 </section>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1440px) {
+        section {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

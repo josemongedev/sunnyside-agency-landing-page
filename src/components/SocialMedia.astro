@@ -1,0 +1,57 @@
+---
+import Icon from "./Icon.astro";
+const iconItems = [
+    {
+        icon: "icon-facebook",
+        url: "https://facebook.com",
+    },
+    {
+        icon: "icon-instagram",
+        url: "https://instagram.io",
+    },
+    {
+        icon: "icon-pinterest",
+        url: "https://pinterest.com",
+    },
+    {
+        icon: "icon-twitter",
+        url: "https://twitter.com",
+    },
+];
+---
+
+<nav>
+    {
+        iconItems.map((item) => (
+            <a href={item.url}>
+                <Icon name={item.icon} />
+            </a>
+        ))
+    }
+</nav>
+
+<style lang="css">
+    a {
+        fill: var(--dark-cyan);
+    }
+
+    a:hover {
+        fill: white;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        width: 154px;
+    }
+
+    nav a {
+        flex-shrink: 1;
+    }
+
+    @media (min-width: 768px) {
+        nav {
+            max-width: 192.5px;
+        }
+    }
+</style>

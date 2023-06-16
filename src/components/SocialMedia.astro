@@ -1,5 +1,5 @@
 ---
-import Icon from "./Icon.astro";
+import Figure from "./Figure.astro";
 const iconItems = [
     {
         icon: "icon-facebook",
@@ -24,7 +24,7 @@ const iconItems = [
     {
         iconItems.map((item) => (
             <a href={item.url}>
-                <Icon name={item.icon} />
+                <Figure name={item.icon} />
             </a>
         ))
     }

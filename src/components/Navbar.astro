@@ -1,0 +1,40 @@
+---
+import Figure from "./Figure.astro";
+
+const menuItems = ["About", "Services", "Projects", "Contact"];
+---
+
+<header>
+    <Figure name="logo" />
+    <button>
+        <Figure name="icon-hamburger" />
+    </button>
+    <nav>
+        {menuItems.map((item) => <a href="#" />)}
+    </nav>
+</header>
+
+<style>
+    header {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+    }
+
+    @media (min-width: 1440px) {
+        button {
+            display: none;
+        }
+        header {
+            margin: 48px 34px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>

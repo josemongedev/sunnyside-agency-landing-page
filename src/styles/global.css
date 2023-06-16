@@ -34,14 +34,32 @@
   /* Fonts */
   --ff-barlow: "Barlow", Arial, Helvetica, sans-serif;
   --ff-fraunces: "Fraunces", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --ff-headings: var(var(--ff-fraunces));
-  --ff-base: var(var(--ff-barlow));
+  --ff-headings: var(--ff-fraunces);
+  --ff-button: var(--ff-fraunces);
+  --ff-base: var(--ff-barlow);
+
+  /* Font sizes */
+  --fs-090: 15px;
+  --fs-100: 16px;
+  --fs-200: 18px;
+
+  --fs-900: 56px;
+
+  /* Line heights */
+  --lh-300: 25px;
+
+  /* Layers */
+  --bg-layer: -1;
+  --content-layer: auto;
+  --navbar-layer: 1;
+  --dialog-layer: 2;
 }
 
 html,
 body {
   font-family: "Barlow";
   font-weight: 600;
+  font-size: 18px;
 }
 
 h1,
@@ -56,6 +74,15 @@ h3 {
   flex-direction: column;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -63,7 +90,12 @@ h3 {
   align-items: center;
 }
 
-.grid-column {
+.grid-1-column {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.grid-2-column {
+  display: grid;
+  grid-template-columns: 2fr;
 }

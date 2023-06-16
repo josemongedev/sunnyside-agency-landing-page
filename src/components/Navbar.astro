@@ -4,37 +4,72 @@ import Figure from "./Figure.astro";
 const menuItems = ["About", "Services", "Projects", "Contact"];
 ---
 
-<header>
-    <Figure name="logo" />
-    <button>
-        <Figure name="icon-hamburger" />
-    </button>
-    <nav>
-        {menuItems.map((item) => <a href="#" />)}
-    </nav>
+<header class="flex-row justify-center">
+    <section class="flex-row justify-space-between items-center">
+        <Figure name="logo" />
+        <button>
+            <Figure name="icon-hamburger" />
+        </button>
+        <nav class="flex-row justify-space-between items-center">
+            {menuItems.map((item) => <a href="#">{item}</a>)}
+        </nav>
+    </section>
 </header>
 
 <style>
     header {
+        width: 100%;
         position: absolute;
         z-index: 1;
-        display: flex;
-        justify-content: space-between;
     }
+
+    section {
+        width: 100%;
+    }
+
     button {
-        appearance: none;
         background-color: transparent;
         border: none;
+    }
+
+    nav {
+        display: none;
     }
 
     @media (min-width: 1440px) {
         button {
             display: none;
         }
+
         header {
-            margin: 48px 34px;
+            padding: 34px 48px 0 40px;
+        }
+
+        nav {
+            height: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        a {
+            font-size: var(--fs-200);
+            width: 140px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            font-size: var(--fs-090);
+            font-family: var(--ff-button);
+            text-transform: uppercase;
+            background-color: white;
+            color: var(--desaturated-blue);
+            border-radius: 28px;
         }
     }
 </style>

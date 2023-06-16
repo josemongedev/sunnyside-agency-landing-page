@@ -2,7 +2,7 @@
 import Figure from "./Figure.astro";
 ---
 
-<section class="flex-column justify-center items-center">
+<section class="flex-column items-center">
     <picture>
         <source
             srcset="/sunnyside-agency-landing-page/images/desktop/image-header.jpg"
@@ -13,22 +13,39 @@ import Figure from "./Figure.astro";
             alt=""
         />
     </picture>
-    <h1>We are creatives</h1>
-    <Figure name="icon-arrow-down" />
+    <article class="flex-column items-center">
+        <h1>We are creatives</h1>
+        <Figure name="icon-arrow-down" />
+    </article>
 </section>
 
 <style>
     section {
-        height: 800px;
+        min-height: 538px;
         color: white;
+        overflow: hidden;
     }
 
     picture {
-        position: absolute;
-        z-index: -1;
     }
+
+    article {
+        top: 195px;
+        gap: 96.54px;
+        position: absolute;
+        z-index: var(--dialog-layer);
+    }
+    h1 {
+        font-size: var(--fs-900);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 8.75px;
+        line-height: 69.05px;
+    }
+
     @media (min-width: 1440px) {
         section {
+            min-height: 800px;
         }
     }
 </style>

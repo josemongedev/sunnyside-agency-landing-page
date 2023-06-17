@@ -20,6 +20,8 @@
 
 :root {
   /* Palette */
+  --white-yellow-tint: hsl(34, 100%, 99%);
+  --white-yellow-tint-light: hsla(34, 100%, 98%, 1);
   --soft-red: hsl(7, 99%, 70%);
   --yellow: hsl(51, 100%, 49%);
   --dark-desaturated-cyan: hsl(167, 40%, 24%);
@@ -55,7 +57,6 @@
   /* Line heights */
   --lh-300: 25px;
   --lh-320: 27px;
-
   /* Layers */
   --bg-layer: -1;
   --content-layer: auto;
@@ -66,6 +67,7 @@
 
 html,
 body {
+  background-color: var(--white-yellow-tint-light);
   font-family: "Barlow";
   font-weight: 600;
   font-size: var(--fs-200);

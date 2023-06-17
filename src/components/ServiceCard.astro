@@ -23,6 +23,7 @@ const { title, content, underlineColor } = Astro.props as Props;
 
 <style define:vars={{ underlineColor }}>
     article {
+        background-color: var(--white-yellow-tint);
         min-width: 375px;
         min-height: 600px;
         position: relative;

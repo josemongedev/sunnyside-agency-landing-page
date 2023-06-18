@@ -87,8 +87,10 @@ const yellow = "hsl(51, 100%, 49%);";
             order: 6;
         }
         section {
-            flex-direction: row;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* flex-direction: row; */
+            /* flex-wrap: wrap; */
         }
     }
 </style>
